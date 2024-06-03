@@ -28,17 +28,12 @@ git clone git@github.com:msiric/siwe-demo.git
 cd siwe-demo
 ```
 
-2. Install dependencies:
-```bash
-yarn install
-```
-
-3. Copy example secrets to .env:
+2. Copy example secrets to .env:
 ```bash
 cp .env.example .env
 ```
 
-4. Run the application:
+3. Run the application:
 ```bash
 yarn run docker:dev
 ```
