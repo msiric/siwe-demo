@@ -12,7 +12,8 @@
     "migrate": "npx prisma migrate dev",
     "generate": "npx prisma generate",
     "docker:dev": "docker-compose up --build && yarn && yarn migrate && yarn generate",
-    "docker:prod": "docker-compose -f docker-compose.prod.yml up --build"
+    "docker:prod": "docker-compose -f docker-compose.prod.yml up --build",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@prisma/client": "^5.14.0",
