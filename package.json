@@ -6,21 +6,42 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "prepare": "husky",
+    "migrate": "npx prisma migrate dev",
+    "generate": "npx prisma generate",
+    "docker:dev": "docker-compose up --build && yarn && yarn migrate && yarn generate",
+    "docker:prod": "docker-compose -f docker-compose.prod.yml up --build"
   },
   "dependencies": {
+    "@prisma/client": "^5.14.0",
+    "@rainbow-me/rainbowkit": "^2.1.2",
+    "@tanstack/react-query": "^5.40.0",
+    "@web3-react/core": "^8.2.3",
+    "ethers": "^6.12.2",
+    "next": "14.2.3",
+    "next-auth": "^4.24.7",
+    "prisma": "^5.14.0",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.3"
+    "react-hook-form": "^7.51.5",
+    "siwe": "^2.3.2",
+    "tailwindcss": "^3.4.1",
+    "truncate-eth-address": "^1.0.2",
+    "viem": "2.x",
+    "wagmi": "^2.9.8",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
     "eslint": "^8",
-    "eslint-config-next": "14.2.3"
+    "eslint-config-next": "14.2.3",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.5",
+    "postcss": "^8",
+    "typescript": "^5"
   }
 }
