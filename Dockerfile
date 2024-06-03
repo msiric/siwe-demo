@@ -1,4 +1,3 @@
-# Use a specific, supported Node.js version
 FROM node:18 AS builder
 
 WORKDIR /app
@@ -24,7 +23,8 @@ RUN chmod +x /app/wait-for-db.sh
 
 EXPOSE 3000
 
-CMD ["/app/wait-for-db.sh", "sh", "-c", "yarn prisma migrate deploy && yarn prisma generate && yarn dev"]
+CMD ["/app/wait-for-it.sh", "db:5432", "--", "sh", "-c", "yarn prisma migrate deploy && yarn prisma generate && yarn dev"]
+
 
 FROM node:18 AS production
 
