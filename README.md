@@ -33,7 +33,12 @@ cd siwe-demo
 yarn install
 ```
 
-3. Run the application:
+3. Copy example secrets to .env:
+```bash
+cp .env.example .env
+```
+
+4. Run the application:
 ```bash
 yarn run docker:dev
 ```
